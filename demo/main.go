@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/sethgrid/multibar"
+	"github.com/icyxp/multibar"
 )
 
 func main() {

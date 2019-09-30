@@ -84,19 +84,19 @@ func (b *BarContainer) Listen() {
 	b.Println()
 }
 
-func (b *BarContainer) MakeBar(total int, prepend string) ProgressFunc {
+func (b *BarContainer) MakeBar(total int, p ProgressBar) ProgressFunc {
 	ch := make(chan int)
 	bar := &ProgressBar{
-		Width:           b.screenWidth - len(prepend) - 20,
+		Width:           b.screenWidth - len(p.Prepend) - 20,
 		Total:           total,
-		Prepend:         prepend,
+		Prepend:         p.Prepend,
 		LeftEnd:         '[',
 		RightEnd:        ']',
 		Fill:            '=',
 		Head:            '>',
 		Empty:           '-',
-		ShowPercent:     true,
-		ShowTimeElapsed: true,
+		ShowPercent:     p.ShowPercent,
+		ShowTimeElapsed: p.ShowTimeElapsed,
 		StartTime:       time.Now(),
 		progressChan:    ch,
 	}
