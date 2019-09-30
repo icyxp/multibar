@@ -143,9 +143,10 @@ func (p *ProgressBar) Update(progress int) {
 		padding := ""
 		if asInt < 10 {
 			padding = "  "
-		} else if asInt < 99 {
+		} else if asInt <= 99 {
 			padding = " "
 		} else if asInt > 100 {
+			padding = " "
 			asInt = 100
 		}
 		percent = padding + strconv.Itoa(asInt) + "% "
