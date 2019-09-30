@@ -160,7 +160,7 @@ func (p *ProgressBar) Update(progress int) {
 	c, _ := curse.New()
 	c.Move(1, p.Line)
 	c.EraseCurrentLine()
-	fmt.Printf("\r%s %s%c%s%c%s", p.Prepend, percent, p.LeftEnd, strings.Join(bar, ""), p.RightEnd, timeElapsed)
+	fmt.Printf("\r%s %s%c%s%c%s", p.Prepend, timeElapsed, p.LeftEnd, strings.Join(bar, ""), p.RightEnd, percent)
 	c.Move(c.StartingPosition.X, c.StartingPosition.Y)
 }
 
