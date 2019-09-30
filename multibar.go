@@ -145,7 +145,7 @@ func (p *ProgressBar) Update(progress int) {
 			padding = "  "
 		} else if asInt <= 99 {
 			padding = " "
-		} else if asInt > 100 {
+		} else if asInt >= 100 {
 			padding = " "
 			asInt = 100
 		}
